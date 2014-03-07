@@ -35,6 +35,10 @@ extern "C" {
     JNIEXPORT void JNICALL Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeDeleteBackward(JNIEnv* env, jobject thiz) {
         cocos2d::CCIMEDispatcher::sharedDispatcher()->dispatchDeleteBackward();
     }
+		
+    JNIEXPORT void JNICALL Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeDeleteForward(JNIEnv* env, jobject thiz) {
+        cocos2d::CCIMEDispatcher::sharedDispatcher()->dispatchDeleteForward();
+    }
 
     JNIEXPORT jstring JNICALL Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeGetContentText() {
         JNIEnv * env = 0;
@@ -44,5 +48,16 @@ extern "C" {
         }
         const char * pszText = cocos2d::CCIMEDispatcher::sharedDispatcher()->getContentText();
         return env->NewStringUTF(pszText);
+    }
+		
+	JNIEXPORT jint JNICALL Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeGetContentTextCursor()
+    {
+        JNIEnv * env = 0;
+
+        if (JniHelper::getJavaVM()->GetEnv((void**)&env, JNI_VERSION_1_4) != JNI_OK || ! env)
+        {
+            return 0;
+        }
+        return cocos2d::CCIMEDispatcher::sharedDispatcher()->getContentTextCursor();
     }
 }

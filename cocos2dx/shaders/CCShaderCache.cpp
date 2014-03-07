@@ -42,7 +42,7 @@ enum {
     kCCShaderType_Position_uColor,
     kCCShaderType_PositionLengthTexureColor,
     kCCShaderType_ControlSwitch,
-    
+    kCCShaderType_PositionTextureColor_MyGUI,
     kCCShaderType_MAX,
 };
 
@@ -155,6 +155,15 @@ void CCShaderCache::loadDefaultShaders()
     
     m_pPrograms->setObject(p, kCCShader_PositionLengthTexureColor);
     p->release();
+    
+    //
+	// Shader for MyGUI Render
+	//
+    p = new CCGLProgram();
+    loadDefaultShader(p, kCCShaderType_PositionTextureColor_MyGUI);
+    
+    m_pPrograms->setObject(p, kCCShader_PositionTextureColor_MyGUI);
+    p->release();
 
     //
 	// ControlSwitch
@@ -223,6 +232,13 @@ void CCShaderCache::reloadDefaultShaders()
     p = programForKey(kCCShader_PositionLengthTexureColor);
     p->reset();
     loadDefaultShader(p, kCCShaderType_PositionLengthTexureColor);
+    
+    //
+	// Shader for MyGUI Render
+	//
+    p = programForKey(kCCShader_PositionTextureColor_MyGUI);
+    p->reset();
+    loadDefaultShader(p, kCCShaderType_PositionTextureColor_MyGUI);
 }
 
 
@@ -298,6 +314,14 @@ void CCShaderCache::loadDefaultShader(CCGLProgram *p, int type)
             p->addAttribute(kCCAttributeNameColor, kCCVertexAttrib_Color);
             p->addAttribute(kCCAttributeNameTexCoord, kCCVertexAttrib_TexCoords);
 
+            break;
+        case kCCShaderType_PositionTextureColor_MyGUI:
+            p->initWithVertexShaderByteArray(ccPositionTextureColor_MyGUI_vert, ccPositionTextureColor_MyGUI_frag);
+            
+            p->addAttribute(kCCAttributeNamePosition, kCCVertexAttrib_Position);
+            p->addAttribute(kCCAttributeNameColor, kCCVertexAttrib_Color);
+            p->addAttribute(kCCAttributeNameTexCoord, kCCVertexAttrib_TexCoords);
+            
             break;
 
         default:

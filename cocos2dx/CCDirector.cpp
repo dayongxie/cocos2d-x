@@ -692,6 +692,10 @@ void CCDirector::end()
 
 void CCDirector::purgeDirector()
 {
+	CCDirectorDelegate* delegate = m_pProjectionDelegate;
+	if (delegate)
+		delegate->prePurge();
+
     // cleanup scheduler
     getScheduler()->unscheduleAll();
     
@@ -745,7 +749,10 @@ void CCDirector::purgeDirector()
     m_pobOpenGLView = NULL;
 
     // delete CCDirector
-    release();
+	release();
+
+	if (delegate)
+		delegate->afterPurge();
 }
 
 void CCDirector::setNextScene(void)

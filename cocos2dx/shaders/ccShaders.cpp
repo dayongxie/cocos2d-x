@@ -74,4 +74,10 @@ const GLchar * ccPositionColorLengthTexture_frag =
 const GLchar * ccPositionColorLengthTexture_vert =
 #include "ccShader_PositionColorLengthTexture_vert.h"
 
+
+const GLchar * ccPositionTextureColor_MyGUI_frag =
+#include "ccShader_PositionTextureColor_MyGUI_frag.h"
+const GLchar * ccPositionTextureColor_MyGUI_vert =
+#include "ccShader_PositionTextureColor_MyGUI_vert.h"
+
 NS_CC_END

@@ -218,6 +218,8 @@ public:
      * Will be called by CCDirector when the projection is updated, and "custom" projection is used
      */
     virtual void updateProjection(void) = 0;
+	virtual void prePurge() = 0;
+	virtual void afterPurge() = 0;
 };
 
 NS_CC_END

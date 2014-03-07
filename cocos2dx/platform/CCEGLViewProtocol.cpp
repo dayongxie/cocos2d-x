@@ -236,7 +236,8 @@ void CCEGLViewProtocol::handleTouchesBegin(int num, int ids[], float xs[], float
         return;
     }
 
-    m_pDelegate->touchesBegan(&set, NULL);
+    if (m_pDelegate)
+        m_pDelegate->touchesBegan(&set, NULL);
 }
 
 void CCEGLViewProtocol::handleTouchesMove(int num, int ids[], float xs[], float ys[])
@@ -277,7 +278,8 @@ void CCEGLViewProtocol::handleTouchesMove(int num, int ids[], float xs[], float 
         return;
     }
 
-    m_pDelegate->touchesMoved(&set, NULL);
+    if (m_pDelegate)
+        m_pDelegate->touchesMoved(&set, NULL);
 }
 
 void CCEGLViewProtocol::getSetOfTouchesEndOrCancel(CCSet& set, int num, int ids[], float xs[], float ys[])
@@ -331,14 +333,16 @@ void CCEGLViewProtocol::handleTouchesEnd(int num, int ids[], float xs[], float y
 {
     CCSet set;
     getSetOfTouchesEndOrCancel(set, num, ids, xs, ys);
-    m_pDelegate->touchesEnded(&set, NULL);
+    if (m_pDelegate)
+        m_pDelegate->touchesEnded(&set, NULL);
 }
 
 void CCEGLViewProtocol::handleTouchesCancel(int num, int ids[], float xs[], float ys[])
 {
     CCSet set;
     getSetOfTouchesEndOrCancel(set, num, ids, xs, ys);
-    m_pDelegate->touchesCancelled(&set, NULL);
+    if (m_pDelegate)
+        m_pDelegate->touchesCancelled(&set, NULL);
 }
 
 const CCRect& CCEGLViewProtocol::getViewPortRect() const

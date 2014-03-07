@@ -86,12 +86,14 @@ protected:
     /**
     @brief    Called by CCIMEDispatcher after the user clicks the backward key.
     */
-    virtual void deleteBackward() {}
+	virtual void deleteBackward() {}
+	virtual void deleteForward() {}
 
     /**
     @brief    Called by CCIMEDispatcher for text stored in delegate.
     */
     virtual const char * getContentText() { return 0; }
+	virtual int getContentTextCursor() { return -1; }
 
     //////////////////////////////////////////////////////////////////////////
     // keyboard show/hide notification

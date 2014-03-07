@@ -75,6 +75,7 @@ public class Cocos2dxHelper {
 		Cocos2dxHelper.sCocos2dSound = new Cocos2dxSound(pContext);
 		Cocos2dxHelper.sAssetManager = pContext.getAssets();
 		Cocos2dxBitmap.setContext(pContext);
+		Cocos2dxFont.setContext(pContext);
 		Cocos2dxETCLoader.setContext(pContext);
 	}
 
@@ -93,7 +94,39 @@ public class Cocos2dxHelper {
 	private static native void nativeSetApkPath(final String pApkPath);
 
 	private static native void nativeSetEditTextDialogResult(final byte[] pBytes);
+	
+	private static native void nativeSetConfigurationString(final String key, final String value);
+	private static native void nativeSetConfigurationInteger(final String key, final Integer value);
+	private static native void nativeSetConfigurationFloat(final String key, final Float value);
+	private static native void nativeSetConfigurationBoolean(final String key, final boolean value);
 
+	private static native void nativeQuit();
+	
+	public static void quit()
+	{
+		nativeQuit();
+	}
+	
+	public static void setConfiguration(String key, String value)
+	{
+		nativeSetConfigurationString(key, value);
+	}
+	
+	public static void setConfiguration(String key, Integer value)
+	{
+		nativeSetConfigurationInteger(key, value);
+	}
+
+	public static void setConfiguration(String key, Float value)
+	{
+		nativeSetConfigurationFloat(key, value);
+	}
+
+	public static void setConfiguration(String key, boolean value)
+	{
+		nativeSetConfigurationBoolean(key, value);
+	}
+	
 	public static String getCocos2dxPackageName() {
 		return Cocos2dxHelper.sPackageName;
 	}

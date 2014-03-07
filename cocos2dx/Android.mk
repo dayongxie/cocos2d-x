@@ -60,6 +60,7 @@ keypad_dispatcher/CCKeypadDelegate.cpp \
 keypad_dispatcher/CCKeypadDispatcher.cpp \
 label_nodes/CCLabelAtlas.cpp \
 label_nodes/CCLabelBMFont.cpp \
+label_nodes/CCLabelNativeFont.cpp \
 label_nodes/CCLabelTTF.cpp \
 layers_scenes_transitions_nodes/CCLayer.cpp \
 layers_scenes_transitions_nodes/CCScene.cpp \
@@ -82,6 +83,7 @@ platform/CCThread.cpp \
 platform/CCFileUtils.cpp \
 platform/platform.cpp \
 platform/CCEGLViewProtocol.cpp \
+platform/android/CCNativeFont_android.cpp \
 platform/android/CCDevice.cpp \
 platform/android/CCEGLView.cpp \
 platform/android/CCAccelerometer.cpp \
@@ -96,6 +98,7 @@ platform/android/jni/Java_org_cocos2dx_lib_Cocos2dxAccelerometer.cpp \
 platform/android/jni/JniHelper.cpp \
 platform/android/jni/IMEJni.cpp \
 platform/android/jni/TouchesJni.cpp \
+platform/android/jni/FontJni.cpp \
 platform/android/jni/DPIJni.cpp \
 script_support/CCScriptSupport.cpp \
 shaders/ccShaders.cpp \

@@ -63,11 +63,13 @@ public:
     @brief Dispatches the delete-backward operation.
     */
     void dispatchDeleteBackward();
+	void dispatchDeleteForward();
 
     /**
     @brief Get the content text from CCIMEDelegate, retrieved previously from IME.
     */
     const char * getContentText();
+	int getContentTextCursor();
 
     //////////////////////////////////////////////////////////////////////////
     // dispatch keyboard notification

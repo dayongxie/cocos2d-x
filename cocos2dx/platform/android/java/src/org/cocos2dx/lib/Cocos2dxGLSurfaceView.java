@@ -90,6 +90,7 @@ public class Cocos2dxGLSurfaceView extends GLSurfaceView {
 							final String text = (String) msg.obj;
 							Cocos2dxGLSurfaceView.this.mCocos2dxEditText.append(text);
 							Cocos2dxGLSurfaceView.sCocos2dxTextInputWraper.setOriginText(text);
+							Cocos2dxGLSurfaceView.sCocos2dxTextInputWraper.setOriginCursor(msg.arg1 < 0 ? text.length() : msg.arg1);
 							Cocos2dxGLSurfaceView.this.mCocos2dxEditText.addTextChangedListener(Cocos2dxGLSurfaceView.sCocos2dxTextInputWraper);
 							final InputMethodManager imm = (InputMethodManager) Cocos2dxGLSurfaceView.mCocos2dxGLSurfaceView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
 							imm.showSoftInput(Cocos2dxGLSurfaceView.this.mCocos2dxEditText, 0);
@@ -137,6 +138,10 @@ public class Cocos2dxGLSurfaceView extends GLSurfaceView {
 	private String getContentText() {
 		return this.mCocos2dxRenderer.getContentText();
 	}
+    
+    private int getContentTextCursor() {
+    	return this.mCocos2dxRenderer.getContentTextCursor();
+    }
 
 	public Cocos2dxEditText getCocos2dxEditText() {
 		return this.mCocos2dxEditText;
@@ -317,6 +322,7 @@ public class Cocos2dxGLSurfaceView extends GLSurfaceView {
 		final Message msg = new Message();
 		msg.what = Cocos2dxGLSurfaceView.HANDLER_OPEN_IME_KEYBOARD;
 		msg.obj = Cocos2dxGLSurfaceView.mCocos2dxGLSurfaceView.getContentText();
+    	msg.arg1 = Cocos2dxGLSurfaceView.mCocos2dxGLSurfaceView.getContentTextCursor();
 		Cocos2dxGLSurfaceView.sHandler.sendMessage(msg);
 	}
 
@@ -340,6 +346,15 @@ public class Cocos2dxGLSurfaceView extends GLSurfaceView {
 			@Override
 			public void run() {
 				Cocos2dxGLSurfaceView.this.mCocos2dxRenderer.handleDeleteBackward();
+			}
+		});
+	}
+	
+	public void deleteForward() {
+		this.queueEvent(new Runnable() {
+			@Override
+			public void run() {
+				Cocos2dxGLSurfaceView.this.mCocos2dxRenderer.handleDeleteForward();
 			}
 		});
 	}

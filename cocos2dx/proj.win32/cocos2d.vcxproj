@@ -141,6 +141,7 @@ xcopy /Y /Q "$(ProjectDir)..\platform\third_party\win32\libraries\*.*" "$(OutDir
   <ItemGroup>
     <ClCompile Include="..\base_nodes\CCAtlasNode.cpp" />
     <ClCompile Include="..\base_nodes\CCNode.cpp" />
+    <ClCompile Include="..\CCDataManager.cpp" />
     <ClCompile Include="..\ccFPSImages.c" />
     <ClCompile Include="..\cocoa\CCAffineTransform.cpp" />
     <ClCompile Include="..\cocoa\CCArray.cpp" />
@@ -172,6 +173,7 @@ xcopy /Y /Q "$(ProjectDir)..\platform\third_party\win32\libraries\*.*" "$(OutDir
     <ClCompile Include="..\actions\CCActionTween.cpp" />
     <ClCompile Include="..\label_nodes\CCLabelAtlas.cpp" />
     <ClCompile Include="..\label_nodes\CCLabelBMFont.cpp" />
+    <ClCompile Include="..\label_nodes\CCLabelNativeFont.cpp" />
     <ClCompile Include="..\label_nodes\CCLabelTTF.cpp" />
     <ClCompile Include="..\layers_scenes_transitions_nodes\CCLayer.cpp" />
     <ClCompile Include="..\layers_scenes_transitions_nodes\CCScene.cpp" />
@@ -201,6 +203,7 @@ xcopy /Y /Q "$(ProjectDir)..\platform\third_party\win32\libraries\*.*" "$(OutDir
     <ClCompile Include="..\platform\win32\CCEGLView.cpp" />
     <ClCompile Include="..\platform\win32\CCFileUtilsWin32.cpp" />
     <ClCompile Include="..\platform\win32\CCImage.cpp" />
+    <ClCompile Include="..\platform\win32\CCNativeFont_win.cpp" />
     <ClCompile Include="..\platform\win32\CCStdC.cpp" />
     <ClCompile Include="..\shaders\CCGLProgram.cpp" />
     <ClCompile Include="..\shaders\ccGLStateCache.cpp" />
@@ -270,6 +273,7 @@ xcopy /Y /Q "$(ProjectDir)..\platform\third_party\win32\libraries\*.*" "$(OutDir
   <ItemGroup>
     <ClInclude Include="..\base_nodes\CCAtlasNode.h" />
     <ClInclude Include="..\base_nodes\CCNode.h" />
+    <ClInclude Include="..\CCDataManager.h" />
     <ClInclude Include="..\ccFPSImages.h" />
     <ClInclude Include="..\cocoa\CCAffineTransform.h" />
     <ClInclude Include="..\cocoa\CCArray.h" />
@@ -311,6 +315,7 @@ xcopy /Y /Q "$(ProjectDir)..\platform\third_party\win32\libraries\*.*" "$(OutDir
     <ClInclude Include="..\include\cocos2d.h" />
     <ClInclude Include="..\label_nodes\CCLabelAtlas.h" />
     <ClInclude Include="..\label_nodes\CCLabelBMFont.h" />
+    <ClInclude Include="..\label_nodes\CCLabelNativeFont.h" />
     <ClInclude Include="..\label_nodes\CCLabelTTF.h" />
     <ClInclude Include="..\layers_scenes_transitions_nodes\CCLayer.h" />
     <ClInclude Include="..\layers_scenes_transitions_nodes\CCScene.h" />
@@ -334,6 +339,7 @@ xcopy /Y /Q "$(ProjectDir)..\platform\third_party\win32\libraries\*.*" "$(OutDir
     <ClInclude Include="..\platform\CCFileUtils.h" />
     <ClInclude Include="..\platform\CCImage.h" />
     <ClInclude Include="..\platform\CCImageCommon_cpp.h" />
+    <ClInclude Include="..\platform\CCNativeFont.h" />
     <ClInclude Include="..\platform\CCPlatformConfig.h" />
     <ClInclude Include="..\platform\CCPlatformMacros.h" />
     <ClInclude Include="..\platform\CCSAXParser.h" />
@@ -344,6 +350,7 @@ xcopy /Y /Q "$(ProjectDir)..\platform\third_party\win32\libraries\*.*" "$(OutDir
     <ClInclude Include="..\platform\win32\CCEGLView.h" />
     <ClInclude Include="..\platform\win32\CCFileUtilsWin32.h" />
     <ClInclude Include="..\platform\win32\CCGL.h" />
+    <ClInclude Include="..\platform\win32\CCNativeFont_win.h" />
     <ClInclude Include="..\platform\win32\CCPlatformDefine.h" />
     <ClInclude Include="..\platform\win32\CCStdC.h" />
     <ClInclude Include="..\shaders\CCGLProgram.h" />

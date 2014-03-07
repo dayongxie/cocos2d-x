@@ -239,6 +239,19 @@ void CCIMEDispatcher::dispatchDeleteBackward()
     } while (0);
 }
 
+void CCIMEDispatcher::dispatchDeleteForward()
+{
+	do 
+	{
+		CC_BREAK_IF(! m_pImpl);
+
+		// there is no delegate attach with ime
+		CC_BREAK_IF(! m_pImpl->m_DelegateWithIme);
+
+		m_pImpl->m_DelegateWithIme->deleteForward();
+	} while (0);
+}
+
 const char * CCIMEDispatcher::getContentText()
 {
     const char * pszContentText = 0;
@@ -248,6 +261,18 @@ const char * CCIMEDispatcher::getContentText()
     }
     return (pszContentText) ? pszContentText : "";
 }
+
+
+int CCIMEDispatcher::getContentTextCursor()
+{
+	if (m_pImpl && m_pImpl->m_DelegateWithIme)
+	{
+		return m_pImpl->m_DelegateWithIme->getContentTextCursor();
+	}
+
+	return -1;
+}
+
 
 //////////////////////////////////////////////////////////////////////////
 // dispatch keyboard message

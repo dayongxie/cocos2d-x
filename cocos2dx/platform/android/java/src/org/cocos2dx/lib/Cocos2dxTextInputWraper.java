@@ -47,6 +47,7 @@ public class Cocos2dxTextInputWraper implements TextWatcher, OnEditorActionListe
 	private final Cocos2dxGLSurfaceView mCocos2dxGLSurfaceView;
 	private String mText;
 	private String mOriginText;
+	private int mCursorPosition;
 
 	// ===========================================================
 	// Constructors
@@ -69,7 +70,11 @@ public class Cocos2dxTextInputWraper implements TextWatcher, OnEditorActionListe
 	public void setOriginText(final String pOriginText) {
 		this.mOriginText = pOriginText;
 	}
-
+	
+	public void setOriginCursor(int cursor) {
+		mCursorPosition = cursor;
+	}
+	
 	// ===========================================================
 	// Methods for/from SuperClass/Interfaces
 	// ===========================================================
@@ -124,7 +129,7 @@ public class Cocos2dxTextInputWraper implements TextWatcher, OnEditorActionListe
 	public boolean onEditorAction(final TextView pTextView, final int pActionID, final KeyEvent pKeyEvent) {
 		if (this.mCocos2dxGLSurfaceView.getCocos2dxEditText() == pTextView && this.isFullScreenEdit()) {
 			// user press the action button, delete all old text and insert new text
-			for (int i = this.mOriginText.length(); i > 0; i--) {
+			for (int i = this.mCursorPosition; i > 0; i--) {
 				this.mCocos2dxGLSurfaceView.deleteBackward();
 				/*
 				if (BuildConfig.DEBUG) {
@@ -132,6 +137,15 @@ public class Cocos2dxTextInputWraper implements TextWatcher, OnEditorActionListe
 				}
 				*/
 			}
+			for (int i = mOriginText.length() - mCursorPosition; i > 0; --i) {
+				this.mCocos2dxGLSurfaceView.deleteForward();
+				/*
+				if (BuildConfig.DEBUG) {
+					Log.d(TAG, "deleteForword");
+				}
+				*/
+			}
+			
 			String text = pTextView.getText().toString();
 
 			/* If user input nothing, translate "\n" to engine. */

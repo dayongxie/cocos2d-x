@@ -1,0 +1,49 @@
+
+class CCNativeFontCache : public CCObject
+{
+public:
+    static CCNativeFontCache * create(const std::string& name, int size, bool bold, const CCSize& textureSize);
+	
+	CCTexture2D* getTexture();
+	ccBMFontDef* loadCharactor(int ch);
+};
+
+class CCNativeFontManager : public CCObject
+{
+public:
+	static CCNativeFontManager* sharedNativeFontManager();
+
+	CCNativeFontCache* getFontCacheForName(const std::string& name);
+	void setFontCacheForName(const std::string& name, CCNativeFontCache* f);
+};
+
+class CCLabelNativeFont : public CCSpriteBatchNode
+{
+    CCLabelNativeFont();
+    ~CCLabelNativeFont();
+    bool init();
+    void setString(const char *label);
+	void setString(const char *label, bool fromUpdate);
+    void setCString(const char *label);
+	const char* getString(void);
+
+	void setAnchorPoint(const CCPoint & var);
+	void setAlignment(CCTextAlignment alignment);
+	void setWidth(float width);
+	void setLineBreakWithoutSpace(bool breakWithoutSpace);
+	void setScale(float scale);
+	void setScaleX(float scaleX);
+	void setScaleY(float scaleY);
+
+    void setColor(const ccColor3B& color);
+    const ccColor3B& getColor(void);
+
+    GLubyte getOpacity(void);
+    void setOpacity(GLubyte opacity);
+
+	bool isOpacityModifyRGB();
+    void setOpacityModifyRGB(bool isOpacityModifyRGB);
+
+    static CCLabelNativeFont * create(const char *str, const char* fontname, float width = kCCLabelAutomaticWidth, CCTextAlignment alignment = kCCTextAlignmentLeft, CCPoint imageOffset = CCPointMake(0, 0));
+	static CCLabelNativeFont * create();
+};
