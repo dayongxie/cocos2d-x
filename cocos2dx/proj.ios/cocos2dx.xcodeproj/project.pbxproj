@@ -316,8 +316,6 @@
 		CE6CDB1117BC890000F1CE24 /* CCNativeFont.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6CDB1017BC890000F1CE24 /* CCNativeFont.h */; };
 		CE6CDB1417BC890D00F1CE24 /* CCNativeFont_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6CDB1217BC890D00F1CE24 /* CCNativeFont_ios.h */; };
 		CE6CDB1517BC890D00F1CE24 /* CCNativeFont_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDB1317BC890D00F1CE24 /* CCNativeFont_ios.mm */; };
-		CEE1B7C4180E3F8200CF4FFD /* CCLabelNativeFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE1B7C2180E3F8200CF4FFD /* CCLabelNativeFont.cpp */; };
-		CEE1B7C5180E3F8200CF4FFD /* CCLabelNativeFont.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE1B7C3180E3F8200CF4FFD /* CCLabelNativeFont.h */; };
 		CEE8E88417BA16E3005F6A7C /* ccShader_PositionTextureColor_MyGUI_frag.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE8E88217BA16E2005F6A7C /* ccShader_PositionTextureColor_MyGUI_frag.h */; };
 		CEE8E88517BA16E3005F6A7C /* ccShader_PositionTextureColor_MyGUI_vert.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE8E88317BA16E3005F6A7C /* ccShader_PositionTextureColor_MyGUI_vert.h */; };
 		D43F7F8A15C7D8BA00D713FC /* CCTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D43F7F8915C7D8BA00D713FC /* CCTouch.cpp */; };
@@ -636,8 +634,6 @@
 		CE6CDB1017BC890000F1CE24 /* CCNativeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNativeFont.h; sourceTree = "<group>"; };
 		CE6CDB1217BC890D00F1CE24 /* CCNativeFont_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNativeFont_ios.h; sourceTree = "<group>"; };
 		CE6CDB1317BC890D00F1CE24 /* CCNativeFont_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCNativeFont_ios.mm; sourceTree = "<group>"; };
-		CEE1B7C2180E3F8200CF4FFD /* CCLabelNativeFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCLabelNativeFont.cpp; sourceTree = "<group>"; };
-		CEE1B7C3180E3F8200CF4FFD /* CCLabelNativeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLabelNativeFont.h; sourceTree = "<group>"; };
 		CEE8E88217BA16E2005F6A7C /* ccShader_PositionTextureColor_MyGUI_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccShader_PositionTextureColor_MyGUI_frag.h; sourceTree = "<group>"; };
 		CEE8E88317BA16E3005F6A7C /* ccShader_PositionTextureColor_MyGUI_vert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccShader_PositionTextureColor_MyGUI_vert.h; sourceTree = "<group>"; };
 		D43F7F8915C7D8BA00D713FC /* CCTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCTouch.cpp; sourceTree = "<group>"; };
@@ -916,8 +912,6 @@
 		1551A418158F2ADE00E66CFE /* label_nodes */ = {
 			isa = PBXGroup;
 			children = (
-				CEE1B7C2180E3F8200CF4FFD /* CCLabelNativeFont.cpp */,
-				CEE1B7C3180E3F8200CF4FFD /* CCLabelNativeFont.h */,
 				1551A419158F2ADE00E66CFE /* CCLabelAtlas.cpp */,
 				1551A41A158F2ADE00E66CFE /* CCLabelAtlas.h */,
 				1551A41B158F2ADE00E66CFE /* CCLabelBMFont.cpp */,
@@ -1366,7 +1360,6 @@
 				1551A6C2158F2ADE00E66CFE /* utility.h in Headers */,
 				1551A6C3158F2ADE00E66CFE /* vec2.h in Headers */,
 				1551A6C4158F2ADE00E66CFE /* vec3.h in Headers */,
-				CEE1B7C5180E3F8200CF4FFD /* CCLabelNativeFont.h in Headers */,
 				1551A6C5158F2ADE00E66CFE /* vec4.h in Headers */,
 				1551A6D4158F2ADE00E66CFE /* CCKeypadDelegate.h in Headers */,
 				1551A6D6158F2ADE00E66CFE /* CCKeypadDispatcher.h in Headers */,
@@ -1573,7 +1566,6 @@
 				1551A658158F2ADE00E66CFE /* CCGeometry.cpp in Sources */,
 				1551A65B158F2ADE00E66CFE /* CCNS.cpp in Sources */,
 				1551A65D158F2ADE00E66CFE /* CCObject.cpp in Sources */,
-				CEE1B7C4180E3F8200CF4FFD /* CCLabelNativeFont.cpp in Sources */,
 				1551A65F158F2ADE00E66CFE /* CCSet.cpp in Sources */,
 				1551A661158F2ADE00E66CFE /* CCString.cpp in Sources */,
 				1551A663158F2ADE00E66CFE /* CCZone.cpp in Sources */,
